@@ -283,14 +283,43 @@
         animation: fadeIn 1.5s ease;
       }
 
-@media (max-width: 767px) {
+/* ===== Responsive layout ===== */
+.hero { height: auto; min-height: 100vh; padding: 90px 15px 40px; }
+.hero-content { max-width: 900px; }
+
+/* Large screens */
+@media (min-width: 1400px) {
+  .hero h1 { font-size: 3.5rem; }
+  .hero p { font-size: 1.4rem; }
+}
+
+/* Tablets and below */
+@media (max-width: 991.98px) {
+  .navbar-collapse { background: rgba(0,0,0,0.95); padding: 10px 15px; margin-top: 8px; border-radius: 8px; }
+  .navbar-nav .nav-link { margin-left: 0; padding: 8px 0; }
+  .about-section { background-attachment: scroll; padding: 70px 0; }
+  .footer-container { justify-content: center; text-align: center; }
+  .footer-section a { justify-content: center; }
+}
+
+/* Phones */
+@media (max-width: 767.98px) {
+  .brand-text { font-size: 1rem; }
   .hero h1 { font-size: 2rem; }
   .hero p { font-size: 0.95rem; }
   .btn-book { padding: 8px 18px; font-size: 0.9rem; }
   .about-intro { font-size: 0.95rem; }
   .about-card h4 { font-size: 1.1rem; }
   .section-title { font-size: 1.5rem; }
-  .gallery-grid { gap: 12px; }
+  .counter { font-size: 2rem; }
+  .footer-container { flex-direction: column; align-items: center; }
+}
+
+/* Small phones */
+@media (max-width: 400px) {
+  .hero h1 { font-size: 1.6rem; }
+  .brand-text { font-size: 0.85rem; }
+  .navbar-brand img { width: 36px; height: 36px; }
 }
 
 
@@ -299,27 +328,35 @@
 <body>
 
 <!-- Navbar -->
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-  <div class="container-fluid d-flex align-items-center">
-    <a class="navbar-brand" href="turf.jsp">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.jsp">
       <img src="images/logo2.png" alt="Indhira's Lake View Turf Logo" width="46" height="46">
       <span class="brand-text">Indhira's Lake View Turf</span>
     </a>
-    <ul class="navbar-nav ms-auto d-flex flex-row align-items-center">
-      <li class="nav-item"><a class="nav-link active" href="index.jsp"><i class="bi bi-house-door-fill"></i> Home</a></li>
-      <li class="nav-item"><a class="nav-link" href="#about"><i class="bi bi-info-circle-fill"></i> About</a></li>
-      <li class="nav-item"><a class="nav-link" href="Booking.html"><i class="bi bi-calendar-check-fill"></i> Booking</a></li>
-      <li class="nav-item"><a class="nav-link" href="pricing.html"><i class="bi bi-cash-stack"></i> Pricing</a></li>
-      <li class="nav-item"><a class="nav-link" href="gallery.html"><i class="bi bi-image-fill"></i> Gallery</a></li>
-      <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-telephone-fill"></i> Contact</a></li>
-<li class="nav-item ms-3">
-        <a href="register.html" target="_blank" class="btn btn-sm btn-outline-success me-2">Register</a>
-        <a href="login.html" target="_blank" class="btn btn-sm btn-success">Login</a>
-      </li>
-      <li class="nav-item ms-3">
-   <a href="LogoutServlet" class="btn btn-sm btn-danger">Logout</a>
-      </li>
-    </ul>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#mainNav" aria-controls="mainNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link active" href="index.jsp"><i class="bi bi-house-door-fill"></i> Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about"><i class="bi bi-info-circle-fill"></i> About</a></li>
+        <li class="nav-item"><a class="nav-link" href="Booking.html"><i class="bi bi-calendar-check-fill"></i> Booking</a></li>
+        <li class="nav-item"><a class="nav-link" href="pricing.html"><i class="bi bi-cash-stack"></i> Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html"><i class="bi bi-image-fill"></i> Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-telephone-fill"></i> Contact</a></li>
+        <li class="nav-item ms-lg-3 my-2 my-lg-0">
+          <a href="register.html" target="_blank" class="btn btn-sm btn-outline-success me-2">Register</a>
+          <a href="login.html" target="_blank" class="btn btn-sm btn-success">Login</a>
+        </li>
+        <li class="nav-item ms-lg-2">
+          <a href="LogoutServlet" class="btn btn-sm btn-danger">Logout</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
@@ -353,22 +390,22 @@
       or hosting an event, we provide the perfect pitch.
     </p>
 
-    <div class="row g-4">
-      <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
+    <div class="row g-4 justify-content-center">
+       <div class="col-12 col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="100">
         <div class="about-card text-center">
           <div class="about-icon">🏟️</div>
           <h4>Our Journey</h4>
           <p>Since 2020, we’ve welcomed 2000+ players and hosted countless matches, leagues, and corporate tournaments. A place where memories are created every day.</p>
         </div>
       </div>
-      <div class="col-md-4" data-aos="flip-up" data-aos-delay="200">
+     <div class="col-12 col-md-6 col-lg-4" data-aos="flip-up" data-aos-delay="200">
         <div class="about-card text-center">
           <div class="about-icon">⚡</div>
           <h4>World-Class Facilities</h4>
           <p>Floodlights for night matches 🌙, secure parking 🚗, refreshments 🍹, and modern changing rooms 👕. Every detail is designed to enhance your play.</p>
         </div>
       </div>
-      <div class="col-md-4" data-aos="flip-right" data-aos-delay="300">
+ <div class="col-12 col-md-6 col-lg-4" data-aos="flip-right" data-aos-delay="300">
         <div class="about-card text-center">
           <div class="about-icon">📏</div>
           <h4>Premium Turf</h4>
@@ -553,13 +590,7 @@
     mirror: false
   });
 
-  const lightbox = GLightbox({
-    selector: ".glightbox",
-    touchNavigation: true,
-    loop: true,
-    autoplayVideos: true,
-    plyr: { css: 'https://cdn.plyr.io/3.6.8/plyr.css', js: 'https://cdn.plyr.io/3.6.8/plyr.js' }
-  });
+
 </script>
 
 </body>
