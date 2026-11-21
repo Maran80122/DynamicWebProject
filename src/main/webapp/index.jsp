@@ -425,8 +425,7 @@
       <h4>Quick Links</h4>
       <a href="#turf1" class="flow-hover"><i class="bi bi-house-fill"></i> Home</a>
       <a href="#about" class="flow-hover"><i class="bi bi-info-circle-fill"></i> About</a>
-     <a href="booking.html" class="flow-hover"><i class="bi bi-calendar-check-fill"></i> Booking</a>
-      <a href="Booking.jsp" onclick="<%= !isLoggedIn ? "alert('Please log in first to book a slot!'); window.location.href='login.jsp?msg=login_required'; return false;" : "" %>" class="flow-hover"><i class="bi bi-calendar-check-fill"></i> Booking</a></a>
+    <a href="Booking.html" class="flow-hover"><i class="bi bi-calendar-check-fill"></i> Booking</a>
       <a href="pricing.html" class="flow-hover"><i class="bi bi-cash-stack"></i> Pricing</a>
       <a href="gallery.html" class="flow-hover"><i class="bi bi-image-fill"></i> Gallery</a>
       <a href="contact.html" class="flow-hover"><i class="bi bi-telephone-fill"></i> Contact</a>
