@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" isELIgnored="true" %>
 <%
     // Check if user is logged in (checks both user_id and userId)
     Object loggedInUser = session != null ? session.getAttribute("user_id") : null;
