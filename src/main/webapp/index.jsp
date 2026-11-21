@@ -481,7 +481,7 @@
   ];
   let currentIndex = 0;
   function changeBackground() {
-    hero.style.backgroundImage = `url('${images[currentIndex]}')`;
+    hero.style.backgroundImage = "url('" + images[currentIndex] + "')";
     currentIndex = (currentIndex + 1) % images.length;
   }
   setInterval(changeBackground, 4000);
